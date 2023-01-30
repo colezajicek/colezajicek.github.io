@@ -1,4 +1,4 @@
-#Thomas Cole Zajicek's Frontend Dev Portfolio Site
+# Thomas Cole Zajicek's Frontend Dev Portfolio Site
 
 
 
