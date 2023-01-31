@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
+  transition: ease all .3s;
 }
 
 a {
@@ -20,6 +21,7 @@ a:hover {
 }
 
 header {
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   /* width: 100%; */
@@ -27,6 +29,7 @@ header {
   background-color: rgba(0, 0, 0, 0.877);
   color: rgba(255, 255, 255, 0.89);
   align-items: center;
+  margin-top: -4.5rem;
 }
 
 nav ul {
@@ -51,15 +54,21 @@ nav ul li {
 }
 
 #splash {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   background-color: rgb(107, 119, 112);
+  margin-top: 4.5rem;
+  align-items: center;
 }
 
 h1 {
-  font-size: 6rem;
-  padding: 2.5rem .5rem 2.5rem 2.5rem;
+  font-size: 8vw;
+  padding: 2.5rem .5rem 2.5rem 5rem;
+  border-right: .15vw solid black;
+  font-family: 'Rock Salt', cursive;
+  color: goldenrod;
 }
 
 #splash div {
@@ -70,14 +79,17 @@ h1 {
 }
 
 #splash p {
-  font-size: 1.4rem;
+  font-size: 2.5vw;
+  line-height: 1.7;
   font-weight: bold;
 }
 
 #projects {
   background-color: rgba(0, 0, 0, 0.877);
-  height: auto;
+  /* min-height: 100vh; */
+  height: fit-content;
   color: rgba(255, 255, 255, 0.89);
+
 }
 
 h2 {
@@ -89,16 +101,18 @@ h2 {
 
 #projects section{
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   color: rgba(255, 255, 255, 0.89);
+  margin: auto;
 }
 
 .project_box {
   display: flex;
-  height: 20rem;
-  width: 20rem;
+  height: 30rem;
+  width: 30rem;
   border: 1px solid rgba(255, 255, 255, 0.425);
   border-radius: 1rem;
   margin: 1rem;
@@ -118,7 +132,7 @@ h2 {
   /* display: flex; */
   background-color: rgb(107, 119, 112);
   color: rgba(0, 0, 0, 0.877);
-  height: auto;
+  height: fit-content;
 }
 
 #about_me section{
@@ -149,7 +163,7 @@ h2 {
   color: rgba(255, 255, 255, 0.89);
   background-color: rgba(0, 0, 0, 0.877);
   padding-bottom: 1rem;
-  height: 15rem;
+  height: fit-content;
   text-align: center;
 }
 
@@ -190,12 +204,20 @@ h3 {
 
 #contact {
   background-color: rgb(107, 119, 112);
-  height: 10rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 #contact div a {
@@ -203,17 +225,72 @@ h3 {
   color: rgba(255, 255, 255, 0.89);
   font-size: 1.8rem;
   font-weight: 600;
+  width: fit-content;
+  margin: 1rem;
 }
 
 #contact div a:hover {
   color: rgba(0, 0, 0, 0.877);
 }
 
+form{
+  width: 40vw;
+  padding: 2rem;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  font-size: 1.3rem;
+  line-height: 1.4;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+input[type=text] {
+  width: fit-content;
+  padding: .5rem;
+  margin: .5rem;
+  box-shadow: 0 0 .5rem black;
+  border-radius: .5rem;
+}
+
+textarea {
+  padding: .5rem;
+  margin: .5rem;
+  box-shadow: 0 0 .5rem black;
+  border-radius: .5rem;
+}
+
+input[type=checkbox] {
+  padding: .5rem;
+  margin: .5rem;
+  width: fit-content;
+}
+
+input[type=submit] {
+  width: fit-content;
+  padding: .5rem;
+  margin: .5rem;
+  border-radius: .5rem;
+}
+
+input[type=submit]:hover {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+}
+
+input[type=submit]:active {
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+
 @media only screen and (max-width: 950px) {
 
   #splash {
-    flex-direction: column;
-    align-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+    height: 50vh;
   }
 
   h1 {
@@ -223,6 +300,7 @@ h3 {
   #splash p {
     max-width: fit-content;
     margin-right: none;
+    font-size: larger;
   }
 
   #about_me section {
@@ -239,9 +317,17 @@ h3 {
     width: auto;
     height: auto;
   }
+
+  form {
+    width: 60vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+
+  #splash {
+    height: 30vh;
+  }
 
   #nav ul li {
     font-size: .8rem;
@@ -251,13 +337,15 @@ h3 {
     padding-bottom: 2rem;
   }
 }
-
+/* 
 @media only screen and (max-width: 450px) {
   
+
+
   h1 {
     font-size: 3.5rem;
   }
-}
+} */
 
 #js_test_area {
   height: 20vh;
@@ -277,5 +365,12 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+footer {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.877);
+  color: white;
+  padding: 1rem;
 }
 
