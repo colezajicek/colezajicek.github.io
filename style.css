@@ -258,3 +258,24 @@ h3 {
     font-size: 3.5rem;
   }
 }
+
+#js_test_area {
+  height: 20vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+}
+
+#test_box {
+  height: 10rem;
+  width: 10rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
