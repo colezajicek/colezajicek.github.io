@@ -326,26 +326,49 @@ input[type=submit]:active {
 @media only screen and (max-width: 600px) {
 
   #splash {
-    height: 30vh;
+    height: fit-content;
+  }
+
+  h1 {
+    font-size: 11vw;
   }
 
   #nav ul li {
     font-size: .8rem;
   }
 
+  #about_me section p{
+    font-size: 1.2rem;
+  }
+
   #about_me section div {
     padding-bottom: 2rem;
   }
-}
-/* 
-@media only screen and (max-width: 450px) {
-  
 
-
-  h1 {
-    font-size: 3.5rem;
+  form {
+    width: 70vw;
   }
-} */
+}
+
+@media only screen and (max-width: 350px) {
+
+  #nav ul li {
+    font-size: .5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  #about_me section p{
+    font-size: 1rem;
+  }
+
+  form {
+    width: 95vw;
+  }
+}
+
 
 #js_test_area {
   height: 20vh;
